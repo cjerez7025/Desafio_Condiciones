@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafío 2 - Condiciones</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    h1 {
+      color: #4CAF50;
+      text-align: center;
+    }
+    h2 {
+      color: #333;
+      border-bottom: 2px solid #4CAF50;
+      padding-bottom: 5px;
+    }
+    section {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* Ejercicio 1 */
+    #imagen-borde {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      cursor: pointer;
+      display: block;
+      margin: 10px auto;
+      border-radius: 4px;
+      background-color: #ddd;
+    }
+    #imagen-borde.con-borde {
+      border: 2px solid red;
+    }
+
+    /* Ejercicio 2 */
+    .stickers-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 15px 0;
+    }
+    .sticker-item {
+      text-align: center;
+    }
+    .sticker-item img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      display: block;
+      margin-bottom: 5px;
+      background: #f0f0f0;
+      border-radius: 4px;
+      padding: 5px;
+    }
+    .sticker-item input {
+      width: 80px;
+      padding: 5px;
+      text-align: center;
+      font-size: 14px;
+    }
+    #btn-verificar-stickers {
+      display: block;
+      margin: 10px auto;
+      padding: 8px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    #btn-verificar-stickers:hover {
+      background-color: #45a049;
+    }
+    #resultado-stickers {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    /* Ejercicio 3 */
+    .password-container {
+      text-align: center;
+    }
+    .password-container select {
+      padding: 6px 10px;
+      font-size: 16px;
+      margin: 0 3px;
+    }
+    #btn-ingresar {
+      display: block;
+      margin: 15px auto;
+      padding: 8px 25px;
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    #btn-ingresar:hover {
+      background-color: #1e88e5;
+    }
+    #resultado-password {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Desafío 2 - Condiciones</h1>
+
+  <!-- ======== EJERCICIO 1 ======== -->
+  <section>
+    <h2>Ejercicio 1 - Borde al hacer click</h2>
+    <p>Haz click en la imagen para agregar o quitar el borde rojo.</p>
+    <img
+      id="imagen-borde"
+      src="https://picsum.photos/200/150"
+      alt="Imagen de ejemplo"
+    />
+  </section>
+
+  <!-- ======== EJERCICIO 2 ======== -->
+  <section>
+    <h2>Ejercicio 2 - Stickers</h2>
+    <p style="text-align:center;">Puedes llevar hasta 10 stickers en total</p>
+    <div class="stickers-container">
+      <div class="sticker-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub">
+        <input type="number" id="sticker1" min="0" value="0" placeholder="0">
+      </div>
+      <div class="sticker-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Slack_Technologies_Logo.svg" alt="Slack">
+        <input type="number" id="sticker2" min="0" value="0" placeholder="0">
+      </div>
+      <div class="sticker-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg" alt="Git">
+        <input type="number" id="sticker3" min="0" value="0" placeholder="0">
+      </div>
+    </div>
+    <button id="btn-verificar-stickers">Verificar</button>
+    <p id="resultado-stickers"></p>
+  </section>
+
+  <!-- ======== EJERCICIO 3 ======== -->
+  <section>
+    <h2>Ejercicio 3 - Password con Select</h2>
+    <div class="password-container">
+      <h3>Ingresa el password</h3>
+      <div>
+        <select id="digito1">
+          <option value="1">1</option><option value="2">2</option>
+          <option value="3">3</option><option value="4">4</option>
+          <option value="5">5</option><option value="6">6</option>
+          <option value="7">7</option><option value="8">8</option>
+          <option value="9">9</option>
+        </select>
+        <select id="digito2">
+          <option value="1">1</option><option value="2">2</option>
+          <option value="3">3</option><option value="4">4</option>
+          <option value="5">5</option><option value="6">6</option>
+          <option value="7">7</option><option value="8">8</option>
+          <option value="9">9</option>
+        </select>
+        <select id="digito3">
+          <option value="1">1</option><option value="2">2</option>
+          <option value="3">3</option><option value="4">4</option>
+          <option value="5">5</option><option value="6">6</option>
+          <option value="7">7</option><option value="8">8</option>
+          <option value="9">9</option>
+        </select>
+      </div>
+      <button id="btn-ingresar">Ingresar</button>
+      <p id="resultado-password"></p>
+    </div>
+  </section>
+
+  <!-- JS externo -->
+  <script src="desafio2_condiciones.js"></script>
+
+</body>
+</html>
